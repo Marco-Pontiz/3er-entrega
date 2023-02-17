@@ -1,6 +1,9 @@
 import app from "./app.js";
 import { createAdminUser } from "./libs/createUser.js";
 import "./database.js";
+import log4js from "log4js";
+
+const loggerConsola= log4js.getLogger('consola');
 
 async function main() {
   await createAdminUser();
