@@ -1,16 +1,14 @@
 import app from "./app.js";
 import { createAdminUser } from "./libs/createUser.js";
 import "./database.js";
-import log4js from "log4js";
-
-const loggerConsola= log4js.getLogger('consola');
+import logger from './log4';
 
 async function main() {
   await createAdminUser();
   app.listen(app.get("port"));
 
-  console.log("Server on port", app.get("port"));
-  console.log("Environment:", process.env.NODE_ENV);
+  logger.info("Server on port", app.get("port"));
+  logger.warn("Environment:", process.env.NODE_ENV);
 }
 
 main();

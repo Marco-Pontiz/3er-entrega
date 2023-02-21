@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 
+const psswd = 'fukw snas emew neht';
 
 function createSendMail(mailConfig) {
     const transporter = nodemailer.createTransport(mailConfig);
@@ -11,18 +12,18 @@ function createSendMail(mailConfig) {
     };
 }
 
-function createSendMailEthereal() {
+function createSendMailGmail() {
     return createSendMail({
-        host: "smtp.ethereal.email",
+        host: "smtp.gmail.com",
         port: 587,
         auth: {
-            user: "noble.barrows@ethereal.email",
-            pass: "wy5PPdA5DGHCkvGE4u"
+            user: "marcopontiz@gmail.com",
+            pass: `${psswd}`
         }
     })
 }
 
-const sendMail = createSendMailEthereal();
+const sendMail = createSendMailGmail();
 const emailAccount = 'marcopontiz@gmail.com';
 const emailSubject = "Welcome to the platforms";
 const emailText = "Hello, we welcome you to our website!";
