@@ -1,19 +1,14 @@
 import app from "./app.js";
 import { createAdminUser } from "./libs/createUser.js";
 import "./database.js";
-//import logger from './log4';
-import * as dotenv from "dotenv";
-dotenv.config();
+import logger from "../src/log4";
 
-const PORT = process.env.PORT;
+const loggerConsola= log4js.getLogger('consola');
 
 async function main() {
   await createAdminUser();
   app.listen(app.get("port"));
-  console.log(`http://localhost:${app.get("port")}`)
-
-  // logger.info("Server on port", app.get("port"));
-  // logger.warn("Environment:", process.env.NODE_ENV);
+  console.log("Server on port", app.get("port"));
+  console.log("Environment:", process.env.NODE_ENV);
 }
-
 main();
