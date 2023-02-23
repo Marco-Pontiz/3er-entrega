@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import * as dotenv from "dotenv";
 dotenv.config();
 
-const psswd = "fukw snas emew neht";
+const psswd = "---";
 
 function createSendMail(mailConfig) {
     const transporter = nodemailer.createTransport(mailConfig);
